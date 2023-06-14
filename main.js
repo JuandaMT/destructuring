@@ -79,14 +79,45 @@ console.log(addOnlyNums(1, "perro", 2, 4));
 const countTheArgs = (...elementos) => {
   let acumulador = 0;
   for (let elemento of elementos) {
-    acumulador +=1
+    acumulador += 1;
   }
-  return acumulador
+  return acumulador;
 };
-console.log(countTheArgs('gato', 'perro', 'pollo', 'oso'))
+console.log(countTheArgs("gato", "perro", "pollo", "oso"));
 // 5
-const combineTwoArrays = (a, b) =>{
-    const arraysCombinadas = [...a,...b]
+const combineTwoArrays = (a, b) => {
+  const arraysCombinadas = [...a, ...b];
+  return arraysCombinadas;
+};
+console.log(combineTwoArrays([1, 2, 3, 4], [1, 2, 3, 4]));
+
+/* EXTRAS */
+const HIGH_TEMPERATURES = {
+  yesterday: 30,
+  today: 35,
+  tomorrow: 32,
+};
+// 1
+const { today } = HIGH_TEMPERATURES;
+const { tomorrow } = HIGH_TEMPERATURES;
+console.log(today);
+console.log(tomorrow);
+// 2
+const onluUniques = (...elementos) => {
+  let arrayUnicos = [];
+  for (let elemento of elementos) {
+    if (!arrayUnicos.includes(elemento)) {
+        // console.log(elemento)
+      arrayUnicos.push(elemento);
+    }
+  }
+  return arrayUnicos;
+};
+console.log(onluUniques(1, 1, 2, "hola", "hola"))
+// 3
+const combineAllArrays = (...arrays) => {
+    // console.log(arrays)
+    const arraysCombinadas = [...arrays]
     return arraysCombinadas
 }
-console.log(combineTwoArrays([1, 2, 3, 4], [1, 2, 3, 4]))
+console.log(combineAllArrays([1], [1], [1]))
